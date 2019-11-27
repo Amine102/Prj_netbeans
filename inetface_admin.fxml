@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9" fx:controller="sys_enchere.Inetface_adminController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="-2.0" prefHeight="485.0" prefWidth="895.0">
+         <children>
+            <Button fx:id="btn_deconnexion" layoutX="661.0" layoutY="426.0" mnemonicParsing="false" onAction="#deconnexion_util" prefHeight="27.0" prefWidth="193.0" text="Deconnexion" />
+            <Button fx:id="btn_ajout" layoutX="645.0" layoutY="60.0" mnemonicParsing="false" onAction="#ajout_produit" prefHeight="27.0" prefWidth="195.0" text="Ajouter un produit" />
+            <Button fx:id="btn_suppression" layoutX="645.0" layoutY="93.0" mnemonicParsing="false" onAction="#suppression_produit" prefHeight="27.0" prefWidth="195.0" text="Supprimer un produit" />
+            <TextField fx:id="filterField" layoutX="174.0" layoutY="14.0" onMouseClicked="#filter_table" prefHeight="27.0" prefWidth="408.0" promptText="recherche" />
+            <TabPane fx:id="tabPane" layoutX="17.0" layoutY="62.0" prefHeight="393.0" prefWidth="561.0" tabClosingPolicy="UNAVAILABLE">
+               <tabs>
+                  <Tab fx:id="tab_achat" text="Achat">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TabPane fx:id="tabPane_achat" layoutX="-3.0" layoutY="-2.0" prefHeight="376.0" prefWidth="565.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab fx:id="tab_achat_produit_dispo" text="Produits disponible en vente">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="343.0" prefWidth="559.0">
+                                             <children>
+                                                <TableView fx:id="table_achat_produit" layoutX="7.0" onMouseClicked="#handleClickTableView" prefHeight="346.0" prefWidth="555.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="col_achat_produit_dispo_enchere_dep" prefWidth="279.0" text="Enchère de départ" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab fx:id="tab_achat_enchere" text="Enchère émis">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="table_achat_enchere" layoutX="4.0" onMouseClicked="#handleClickTableView" prefHeight="343.0" prefWidth="561.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="col_achat_enchere_titre" prefWidth="204.0" text="titre" />
+                                                      <TableColumn fx:id="col_achat_enchere_prix" minWidth="0.0" prefWidth="139.0" text="Prix" />
+                                                      <TableColumn fx:id="col_achat_enchere_vendeur" prefWidth="204.0" text="Vendeur" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="tab_vente" text="Vente">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane layoutX="157.0" layoutY="54.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="394.0" />
+                              <TabPane fx:id="tabPane_vente" layoutX="-2.0" layoutY="-3.0" prefHeight="361.0" prefWidth="565.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab fx:id="tab_vente_produit_mis_vente" text="Produit mis en vente">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="391.0" prefWidth="490.0">
+                                             <children>
+                                                <TableView fx:id="table_vente_produit_en_vente" layoutX="2.0" onMouseClicked="#handleClickTableView" prefHeight="327.0" prefWidth="561.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="col_vente_produit_mis_titre" prefWidth="298.6092610359192" text="titre du produit" />
+                                                      <TableColumn fx:id="col_vente_produit_mis_enchere_dep" minWidth="0.0" prefWidth="280.316162109375" text="enchère de départ" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+            <Button fx:id="btn_refresh" defaultButton="true" layoutX="695.0" layoutY="11.0" mnemonicParsing="false" onAction="#refresh" text="Actualiser" />
+            <ImageView fx:id="_image" fitHeight="137.0" fitWidth="231.0" layoutX="635.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="btn_encherir_produit" layoutX="645.0" layoutY="124.0" mnemonicParsing="false" onAction="#encherir_produit" prefHeight="27.0" prefWidth="196.0" text="Encherir un produit" />
+            <Button fx:id="btn_modifier_produit" layoutX="645.0" layoutY="157.0" mnemonicParsing="false" onAction="#modifier_produit" prefHeight="27.0" prefWidth="197.0" text="modifier un produit" />
+            <Button fx:id="btn_retracter" layoutX="645.0" layoutY="190.0" mnemonicParsing="false" onAction="#retraction" prefHeight="27.0" prefWidth="196.0" text="se retracter" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

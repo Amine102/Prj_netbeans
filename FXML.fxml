@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="460.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sys_enchere.FXMLController">
+   <children>
+      <TextField fx:id="pass_text_2" layoutX="39.0" layoutY="221.0" prefHeight="27.0" prefWidth="167.0" promptText="Mot de passe" />
+      <PasswordField id="box_connection_pass" fx:id="box_connection_pass" layoutX="39.0" layoutY="221.0" prefHeight="27.0" prefWidth="167.0" promptText="Mot de passe">
+         <font>
+            <Font name="Al Tarikh Regular" size="14.0" />
+         </font>
+      </PasswordField>
+      <Label layoutX="227.0" layoutY="14.0" prefHeight="41.0" prefWidth="156.0" text="Bonjour">
+         <font>
+            <Font size="42.0" />
+         </font>
+      </Label>
+      <Label layoutX="55.0" layoutY="92.0" text="Connectez-vous à EnchèrPhine" />
+      <TextField id="box_connection_mail" fx:id="box_connection_mail" layoutX="39.0" layoutY="178.0" promptText="Adresse mail" />
+      <Label layoutX="162.0" layoutY="447.0" prefHeight="52.0" prefWidth="285.0" text="Copyright © 2018-... EnchèrPhine Inc. Tous droits réservés. " textAlignment="CENTER">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Separator layoutX="-7.0" layoutY="427.0" prefHeight="40.0" prefWidth="623.0" />
+      <Button id="btn_connection" fx:id="btn_connection" layoutX="63.0" layoutY="277.0" mnemonicParsing="false" onAction="#connection_util" text="Connectez-vous" />
+      <Separator layoutX="294.0" layoutY="116.0" orientation="VERTICAL" prefHeight="102.0" prefWidth="6.0" />
+      <Label layoutX="288.0" layoutY="214.0" text="ou" />
+      <Separator prefWidth="200.0" />
+      <Separator layoutX="294.0" layoutY="229.0" orientation="VERTICAL" prefHeight="127.0" prefWidth="6.0" />
+      <TextField id="box_insciption_nom" fx:id="box_inscript_nom" layoutX="324.0" layoutY="142.0" prefHeight="27.0" prefWidth="134.0" promptText="nom" />
+      <TextField id="box_inscription_prenom" fx:id="box_inscript_prenom" layoutX="476.0" layoutY="142.0" prefHeight="27.0" prefWidth="127.0" promptText="prenom" />
+      <TextField id="box_inscription_mail" fx:id="box_inscript_mail" layoutX="324.0" layoutY="185.0" prefHeight="27.0" prefWidth="229.0" promptText="Adresse mail" />
+      <TextField fx:id="pass_text" layoutX="324.0" layoutY="228.0" prefHeight="27.0" prefWidth="229.0" promptText="Mot de passe" />
+      <PasswordField id="box_inscription_pass" fx:id="box_inscript_pass" layoutX="324.0" layoutY="228.0" prefHeight="27.0" prefWidth="229.0" promptText="Mot de passe">
+         <font>
+            <Font name="Al Tarikh Regular" size="13.0" />
+         </font>
+      </PasswordField>
+      <CheckBox id="check_affich_pass" fx:id="check_affich_pass" layoutX="569.0" layoutY="232.0" mnemonicParsing="false" onAction="#togglevisiblePassword" prefHeight="18.0" prefWidth="70.0" text="Afficher">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </CheckBox>
+      <Button id="btn_insciption" fx:id="btn_inscription" layoutX="391.0" layoutY="413.0" mnemonicParsing="false" onAction="#inscription_util" prefHeight="18.0" prefWidth="78.0" text="S'inscrire" />
+      <TextArea editable="false" layoutX="321.0" layoutY="262.0" prefHeight="141.0" prefWidth="253.0" text="             En cochant cette case, &#10;             vous confirmez avoir lu et &#10;  accepté les Conditions d'utilisation. &#10;  Veuillez vous référer à notre Avis &#10;  sur les données personnelles pour &#10;  toute information concernant le &#10;  traitement de vos données." />
+      <CheckBox id="check_accept_condiions" fx:id="check_accept_conditions" layoutX="347.0" layoutY="275.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="16.0" />
+      <Label layoutX="355.0" layoutY="92.0" text="Créez un compte professionel" />
+      <Button id="btn_aide" layoutX="494.0" layoutY="414.0" mnemonicParsing="false" onAction="#aide_util" prefHeight="27.0" prefWidth="40.0" style="{background}: url(help.png); : `;" text="?" />
+      <Label fx:id="error_connect_label" alignment="TOP_LEFT" layoutX="39.0" layoutY="322.0" prefHeight="118.0" prefWidth="200.0" textAlignment="CENTER" textFill="#c62d2d" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <CheckBox id="check_affich_pass" fx:id="check_affich_pass1" layoutX="213.0" layoutY="227.0" mnemonicParsing="false" onAction="#togglevisiblePassword_connect" prefHeight="18.0" prefWidth="70.0" text="Afficher">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </CheckBox>
+   </children>
+</AnchorPane>
